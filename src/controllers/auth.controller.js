@@ -67,3 +67,24 @@ export const login = async (req, res) => {
         res.status(500).json({ error: "Internal server error" });
     }
 };
+
+// whoami handler
+export const whoAmI = async (req, res) => {
+    try {
+        const authHeader = req.headers.authorization;
+        if (!authHeader || !authHeader.startsWith("Bearer ")) {
+            return res.status(401).json({ error: "Authorization header missing or malformed" });
+        }
+
+        const token = authHeader.split(" ")[1];
+        const decoded = authService.verifyToken(token);
+
+        res.json({
+            message: "Authenticated user",
+            user: { id: decoded.userId, username: decoded.username },
+        });
+    } catch (err) {
+        console.error("WhoAmI error:", err.message);
+        res.status(401).json({ error: "Invalid or expired token" });
+    }
+};
