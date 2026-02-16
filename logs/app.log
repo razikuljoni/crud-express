@@ -1,0 +1,15 @@
+2026-02-16T19:10:43.754Z info: ✓ Server running on port 3000
+2026-02-16T19:10:47.508Z info: ✓ Server running on port 3000
+2026-02-16T19:10:52.828Z info: ✓ Server running on port 3000
+2026-02-16T19:10:59.116Z info: ::1 - - [16/Feb/2026:19:10:59 +0000] "POST /api/auth/login HTTP/1.1" 401 31 "-" "PostmanRuntime/7.39.1"
+2026-02-16T19:11:07.898Z info: ::1 - - [16/Feb/2026:19:11:07 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-16T19:11:36.249Z info: ✓ Server running on port 3000
+2026-02-16T19:11:40.158Z info: ::1 - - [16/Feb/2026:19:11:40 +0000] "POST /api/auth/login HTTP/1.1" 500 33 "-" "PostmanRuntime/7.39.1"
+2026-02-16T19:11:53.661Z info: ✓ Server running on port 3000
+2026-02-16T19:12:14.004Z info: ✓ Server running on port 3000
+2026-02-16T19:12:17.238Z info: ::1 - - [16/Feb/2026:19:12:17 +0000] "POST /api/auth/login HTTP/1.1" 500 33 "-" "PostmanRuntime/7.39.1"
+2026-02-16T19:12:23.745Z info: ✓ Server running on port 3000
+2026-02-16T19:14:56.595Z info: ::1 - - [16/Feb/2026:19:14:56 +0000] "GET / HTTP/1.1" 200 67 "-" "curl/8.7.1"
+2026-02-16T19:14:58.820Z info: ::1 - - [16/Feb/2026:19:14:58 +0000] "GET /unknown HTTP/1.1" 404 21 "-" "curl/8.7.1"
+2026-02-16T19:14:58.843Z info: ::1 - - [16/Feb/2026:19:14:58 +0000] "POST /api/auth/login HTTP/1.1" 400 46 "-" "curl/8.7.1"
+2026-02-16T19:17:03.384Z info: ::1 - - [16/Feb/2026:19:17:03 +0000] "POST /api/auth/login HTTP/1.1" 401 31 "-" "curl/8.7.1"

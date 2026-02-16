@@ -1,7 +1,9 @@
 import authRoutes from "#routes/auth.routes.js";
+import logger from "#utils/logger.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import morgan from "morgan";
 
 const app = express();
 
@@ -12,6 +14,15 @@ dotenv.config();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+
+// HTTP request logging
+app.use(
+    morgan("combined", {
+        stream: {
+            write: (message) => logger.info(message.trim()),
+        },
+    }),
+);
 
 // Routes
 app.get("/", (req, res) => {
@@ -32,7 +43,7 @@ app.use((req, res) => {
 
 // Error Handler
 app.use((err, req, res, next) => {
-    console.error(err.message);
+    logger.error(err);
     res.status(err.status || 500).json({ error: err.message });
 });
 

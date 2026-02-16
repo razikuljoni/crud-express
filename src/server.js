@@ -1,3 +1,4 @@
+import logger from "#utils/logger.js";
 import app from "./app.js";
 import { closeDbConnection, connectDb } from "./config/db.js";
 
@@ -11,36 +12,35 @@ const bootstrap = async () => {
         await connectDb(MONGODB_URI);
 
         server = app.listen(PORT, () => {
-            console.log(`✓ Server running on port ${PORT}`);
+            logger.info(`✓ Server running on port ${PORT}`);
         });
 
         server.on("error", (error) => {
             if (error.code === "EADDRINUSE") {
-                console.error(`✗ Port ${PORT} is already in use`);
+                logger.error(`✗ Port ${PORT} is already in use`);
                 process.exit(1);
             }
             throw error;
         });
     } catch (err) {
-        console.error("✗ Startup failed:", err.message);
+        logger.error(`✗ Startup failed: ${err.message}`);
         process.exit(1);
     }
 };
 
 // Handle graceful shutdown
 const shutdown = async () => {
-    console.log("\n⏹ Shutting down...");
+    logger.info("\n⏹ Shutting down...");
 
     if (server) {
         server.close(async () => {
             await closeDbConnection();
-            console.log("✓ Shutdown complete");
+            logger.info("✓ Shutdown complete");
             process.exit(0);
         });
 
-        // Force exit after 3 seconds
         setTimeout(() => {
-            console.warn("⚠ Force exiting...");
+            logger.warn("⚠ Force exiting...");
             process.exit(0);
         }, 3000);
     }
@@ -48,5 +48,15 @@ const shutdown = async () => {
 
 process.on("SIGINT", shutdown);
 process.on("SIGTERM", shutdown);
+
+process.on("uncaughtException", (err) => {
+    logger.error("Uncaught Exception", err);
+    process.exit(1);
+});
+
+process.on("unhandledRejection", (reason) => {
+    logger.error("Unhandled Rejection", reason);
+    process.exit(1);
+});
 
 bootstrap();
