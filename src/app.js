@@ -1,6 +1,7 @@
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
+import authRoutes from "./routes/auth.routes.js";
 
 const app = express();
 
@@ -20,6 +21,9 @@ app.get("/", (req, res) => {
         message: "Server is Running 🆗",
     });
 });
+
+// API Routes
+app.use("/api/auth", authRoutes);
 
 // 404 Handler
 app.use((req, res) => {

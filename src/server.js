@@ -1,8 +1,8 @@
 import app from "./app.js";
-import { closeDbConnection, connectDb } from "./db.js";
+import { closeDbConnection, connectDb } from "./config/db.js";
 
 const PORT = process.env.PORT || 3000;
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/crud-express";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://admin:changeme123@localhost:27017/";
 
 let server;
 
