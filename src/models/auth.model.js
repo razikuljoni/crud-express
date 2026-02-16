@@ -1,5 +1,5 @@
 // User model - Database operations only
-import { getDb } from "../config/db.js";
+import { getDb } from "#config/db.js";
 
 const COLLECTION_NAME = "users";
 

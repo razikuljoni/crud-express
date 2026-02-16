@@ -1,5 +1,5 @@
 // Auth middleware - Protect routes with JWT verification
-import * as authService from "../services/auth.service.js";
+import { verifyToken } from "#utils/jwt.util.js";
 
 export const authenticate = async (req, res, next) => {
     try {
@@ -12,7 +12,7 @@ export const authenticate = async (req, res, next) => {
         const token = authHeader.substring(7); // Remove 'Bearer ' prefix
 
         // Verify token
-        const decoded = authService.verifyToken(token);
+        const decoded = verifyToken(token);
 
         // Attach user info to request
         req.user = decoded;

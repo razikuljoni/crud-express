@@ -1,5 +1,6 @@
 // Auth controller - HTTP request/response handling only
-import * as authService from "../services/auth.service.js";
+import * as authService from "#services/auth.service.js";
+import { verifyToken } from "#utils/jwt.util.js";
 
 // Register handler
 export const register = async (req, res) => {
@@ -77,7 +78,7 @@ export const whoAmI = async (req, res) => {
         }
 
         const token = authHeader.split(" ")[1];
-        const decoded = authService.verifyToken(token);
+        const decoded = verifyToken(token);
 
         res.json({
             message: "Authenticated user",

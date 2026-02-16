@@ -1,10 +1,7 @@
 // Auth service - Business logic layer
-import bcrypt from "bcrypt";
-import jwt from "jsonwebtoken";
+import { generateToken } from "#utils/jwt.util.js";
+import { comparePassword, hashPassword } from "#utils/password.util.js";
 import * as authModel from "../models/auth.model.js";
-
-const JWT_SECRET = process.env.JWT_SECRET || "your_secret_key";
-const SALT_ROUNDS = 10;
 
 // Register a new user
 export const registerUser = async (name, username, password) => {
@@ -15,7 +12,7 @@ export const registerUser = async (name, username, password) => {
     }
 
     // Hash password
-    const hashedPassword = await bcrypt.hash(password, SALT_ROUNDS);
+    const hashedPassword = await hashPassword(password);
 
     // Create user
     const userData = {
@@ -38,24 +35,13 @@ export const loginUser = async (username, password) => {
     }
 
     // Verify password
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await comparePassword(password, user.password);
     if (!isMatch) {
         throw new Error("Invalid credentials");
     }
 
     // Generate token
-    const token = jwt.sign({ userId: user._id.toString(), username: user.username }, JWT_SECRET, {
-        expiresIn: "24h",
-    });
+    const token = generateToken({ userId: user._id.toString(), username: user.username });
 
     return { token, user: { id: user._id, username: user.username } };
-};
-
-// Verify JWT token
-export const verifyToken = (token) => {
-    try {
-        return jwt.verify(token, JWT_SECRET);
-    } catch (err) {
-        throw new Error("Invalid token");
-    }
 };
