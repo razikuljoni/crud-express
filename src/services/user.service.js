@@ -7,6 +7,8 @@ import { comparePassword, hashPassword } from "#utils/password.util.js";
 // Register a new user
 export const registerUser = async (userData) => {
     try {
+        console.log("user service", userData);
+
         // Check if username already exists
         const existingUsername = await userModel.findUserByUsername(userData.username);
         if (existingUsername) {

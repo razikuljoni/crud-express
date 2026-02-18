@@ -13,12 +13,14 @@ export const validate = (schema) => {
 
             next();
         } catch (error) {
+            console.log("error checked", error);
             // Handle Zod validation errors
             if (error.errors) {
                 const errors = error.errors.map((err) => ({
                     field: err.path.join("."),
                     message: err.message,
                 }));
+                console.log("errors", errors);
 
                 logger.warn("Validation failed", {
                     method: req.method,
