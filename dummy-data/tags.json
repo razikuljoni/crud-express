@@ -1,0 +1,62 @@
+[
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5001" },
+        "title": "Backend Development",
+        "slug": "backend-development"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5002" },
+        "title": "Frontend Development",
+        "slug": "frontend-development"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5003" },
+        "title": "UI/UX Design",
+        "slug": "ui-ux-design"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5004" },
+        "title": "Database",
+        "slug": "database"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5005" },
+        "title": "API Development",
+        "slug": "api-development"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5006" },
+        "title": "Authentication",
+        "slug": "authentication"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5007" },
+        "title": "DevOps",
+        "slug": "devops"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5008" },
+        "title": "Testing",
+        "slug": "testing"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5009" },
+        "title": "Documentation",
+        "slug": "documentation"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5010" },
+        "title": "Bug Fix",
+        "slug": "bug-fix"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5011" },
+        "title": "Feature",
+        "slug": "feature"
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f5012" },
+        "title": "Performance",
+        "slug": "performance"
+    }
+]

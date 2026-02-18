@@ -1,0 +1,107 @@
+[
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6001" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5001" },
+        "createdAt": { "$date": "2024-02-10T09:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6001" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5006" },
+        "createdAt": { "$date": "2024-02-10T09:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6001" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5011" },
+        "createdAt": { "$date": "2024-02-10T09:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6002" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5002" },
+        "createdAt": { "$date": "2024-02-11T10:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6002" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5003" },
+        "createdAt": { "$date": "2024-02-11T10:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6002" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5011" },
+        "createdAt": { "$date": "2024-02-11T10:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6003" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5001" },
+        "createdAt": { "$date": "2024-02-12T11:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6003" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5005" },
+        "createdAt": { "$date": "2024-02-12T11:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6003" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5004" },
+        "createdAt": { "$date": "2024-02-12T11:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6004" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5007" },
+        "createdAt": { "$date": "2024-02-14T14:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6004" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5011" },
+        "createdAt": { "$date": "2024-02-14T14:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6005" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5001" },
+        "createdAt": { "$date": "2024-02-13T15:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6005" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5005" },
+        "createdAt": { "$date": "2024-02-13T15:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6005" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5011" },
+        "createdAt": { "$date": "2024-02-13T15:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6006" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5004" },
+        "createdAt": { "$date": "2024-02-15T13:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6006" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5012" },
+        "createdAt": { "$date": "2024-02-15T13:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6006" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5001" },
+        "createdAt": { "$date": "2024-02-15T13:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6007" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5002" },
+        "createdAt": { "$date": "2024-02-16T10:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6007" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5010" },
+        "createdAt": { "$date": "2024-02-16T10:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6008" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5009" },
+        "createdAt": { "$date": "2024-02-17T08:00:00.000Z" }
+    },
+    {
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6008" },
+        "tagId": { "$oid": "65d1f85e8c9b4a1d2e3f5005" },
+        "createdAt": { "$date": "2024-02-17T08:00:00.000Z" }
+    }
+]

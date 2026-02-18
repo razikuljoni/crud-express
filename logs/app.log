@@ -13,3 +13,245 @@
 2026-02-16T19:14:58.820Z info: ::1 - - [16/Feb/2026:19:14:58 +0000] "GET /unknown HTTP/1.1" 404 21 "-" "curl/8.7.1"
 2026-02-16T19:14:58.843Z info: ::1 - - [16/Feb/2026:19:14:58 +0000] "POST /api/auth/login HTTP/1.1" 400 46 "-" "curl/8.7.1"
 2026-02-16T19:17:03.384Z info: ::1 - - [16/Feb/2026:19:17:03 +0000] "POST /api/auth/login HTTP/1.1" 401 31 "-" "curl/8.7.1"
+2026-02-17T06:09:18.410Z error: ✗ Startup failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017
+2026-02-17T06:09:39.252Z info: ✓ Server running on port 3000
+2026-02-17T06:12:05.352Z info: ✓ Server running on port 3000
+2026-02-17T06:12:07.093Z info: ✓ Server running on port 3000
+2026-02-17T06:12:08.825Z info: ✓ Server running on port 3000
+2026-02-17T06:12:11.722Z info: ✓ Server running on port 3000
+2026-02-17T06:12:13.175Z info: ✓ Server running on port 3000
+2026-02-17T06:12:14.767Z info: ✓ Server running on port 3000
+2026-02-17T06:12:26.445Z info: ✓ Server running on port 3000
+2026-02-17T06:12:29.829Z info: ✓ Server running on port 3000
+2026-02-17T06:12:34.363Z info: ✓ Server running on port 3000
+2026-02-17T06:12:41.845Z info: ✓ Server running on port 3000
+2026-02-17T06:12:46.576Z info: ✓ Server running on port 3000
+2026-02-17T06:12:49.970Z info: ✓ Server running on port 3000
+2026-02-17T06:17:29.520Z info: ✓ Server running on port 3000
+2026-02-17T06:17:31.212Z info: ✓ Server running on port 3000
+2026-02-17T06:17:34.313Z info: ✓ Server running on port 3000
+2026-02-17T06:17:37.277Z info: ✓ Server running on port 3000
+2026-02-17T06:18:17.349Z info: ✓ Server running on port 3000
+2026-02-17T06:18:18.928Z info: ✓ Server running on port 3000
+2026-02-17T06:21:44.251Z info: ✓ Server running on port 3000
+2026-02-17T06:28:26.578Z info: ✓ Server running on port 3000
+2026-02-17T06:28:28.436Z info: ✓ Server running on port 3000
+2026-02-17T06:31:25.782Z info: ✓ Server running on port 3000
+2026-02-17T06:31:27.868Z info: ✓ Server running on port 3000
+2026-02-17T06:31:35.305Z info: ✓ Server running on port 3000
+2026-02-17T06:31:37.614Z info: ✓ Server running on port 3000
+2026-02-17T06:37:03.151Z info: ✓ Server running on port 3000
+2026-02-17T06:37:28.567Z info: ::1 - - [17/Feb/2026:06:37:28 +0000] "POST /api/auth/login HTTP/1.1" 401 31 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:37:34.194Z info: ::1 - - [17/Feb/2026:06:37:34 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:39:40.484Z info: ::1 - - [17/Feb/2026:06:39:40 +0000] "POST /api/auth/login HTTP/1.1" 400 46 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:39:47.291Z info: ::1 - - [17/Feb/2026:06:39:47 +0000] "POST /api/auth/login HTTP/1.1" 400 46 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:39:54.709Z info: ::1 - - [17/Feb/2026:06:39:54 +0000] "POST /api/auth/login HTTP/1.1" 400 46 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:40:06.358Z info: ::1 - - [17/Feb/2026:06:40:06 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:40:13.169Z info: ::1 - - [17/Feb/2026:06:40:13 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:40:13.952Z info: ::1 - - [17/Feb/2026:06:40:13 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:40:14.562Z info: ::1 - - [17/Feb/2026:06:40:14 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:40:15.401Z info: ::1 - - [17/Feb/2026:06:40:15 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:40:16.198Z info: ::1 - - [17/Feb/2026:06:40:16 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:41:10.620Z info: ::1 - - [17/Feb/2026:06:41:10 +0000] "POST /api/auth/login HTTP/1.1" 500 33 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:41:49.159Z info: ::1 - - [17/Feb/2026:06:41:49 +0000] "POST /api/auth/login HTTP/1.1" 500 33 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:41:57.584Z info: ::1 - - [17/Feb/2026:06:41:57 +0000] "POST /api/auth/login HTTP/1.1" 400 46 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:42:02.155Z info: ::1 - - [17/Feb/2026:06:42:02 +0000] "POST /api/auth/login HTTP/1.1" 400 46 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:42:06.089Z info: ::1 - - [17/Feb/2026:06:42:06 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:42:06.871Z info: ::1 - - [17/Feb/2026:06:42:06 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:42:07.494Z info: ::1 - - [17/Feb/2026:06:42:07 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+2026-02-17T06:42:07.852Z info: ::1 - - [17/Feb/2026:06:42:07 +0000] "POST /api/auth/login HTTP/1.1" 200 300 "-" "PostmanRuntime/7.39.1"
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:48:18.603Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:48:26.737Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:49:04 +0000] \"POST /api/auth/login HTTP/1.1\" 200 300 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:49:04.637Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:49:10 +0000] \"POST /api/auth/login HTTP/1.1\" 200 300 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:49:10.000Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:49:17 +0000] \"POST /api/auth/logi HTTP/1.1\" 404 21 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:49:17.173Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:49:22 +0000] \"POST /api/auth/logi HTTP/1.1\" 404 21 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:49:22.292Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:49:28 +0000] \"POST /api/auth/login HTTP/1.1\" 200 300 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:49:28.390Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:50:15 +0000] \"POST /api/auth/login HTTP/1.1\" 500 33 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:50:15.020Z"}
+{"level":"error","message":"✗ Startup failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:51:18.485Z"}
+{"level":"error","message":"✗ Startup failed: connect ECONNREFUSED ::1:27017, connect ECONNREFUSED 127.0.0.1:27017","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:55:23.416Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:55:56.730Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:58:24.495Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:58:33.157Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:58:48 +0000] \"POST /api/auth/login HTTP/1.1\" 200 300 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:58:48.588Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:58:54 +0000] \"POST /api/auth/login HTTP/1.1\" 200 300 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:58:54.235Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:59:06 +0000] \"POST /api/auth/logi HTTP/1.1\" 404 21 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:59:06.179Z"}
+{"level":"info","message":"::1 - - [17/Feb/2026:06:59:10 +0000] \"POST /api/auth/logi HTTP/1.1\" 404 21 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:59:10.903Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:59:33.692Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T06:59:40.780Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T07:52:30.688Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T07:55:44.812Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T07:55:44.873Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:07:56:44 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"curl/8.7.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T07:56:44.668Z"}
+{"level":"info","message":"User registered successfully","metadata":{"email":"john.doe@example.com","metadata":{"email":"john.doe@example.com","userId":"69941f4a1d3930f3f3534cfe","username":"johndoe123"},"userId":"69941f4a1d3930f3f3534cfe","username":"johndoe123"},"timestamp":"2026-02-17T07:56:58.669Z"}
+{"level":"info","message":"User registration successful","metadata":{"metadata":{}},"method":"POST","statusCode":201,"timestamp":"2026-02-17T07:56:58.669Z","url":"/register"}
+{"level":"http","message":"::1 - - [17/Feb/2026:07:56:58 +0000] \"POST /api/users/register HTTP/1.1\" 201 309 \"-\" \"curl/8.7.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T07:56:58.670Z"}
+{"level":"info","message":"User logged in successfully","metadata":{"metadata":{"userId":"69941f4a1d3930f3f3534cfe","username":"johndoe123"},"userId":"69941f4a1d3930f3f3534cfe","username":"johndoe123"},"timestamp":"2026-02-17T07:57:10.754Z"}
+{"level":"info","message":"User login successful","metadata":{"metadata":{}},"method":"POST","statusCode":200,"timestamp":"2026-02-17T07:57:10.754Z","url":"/login"}
+{"level":"http","message":"::1 - - [17/Feb/2026:07:57:10 +0000] \"POST /api/users/login HTTP/1.1\" 200 620 \"-\" \"curl/8.7.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T07:57:10.755Z"}
+{"level":"info","message":"User profile retrieved","metadata":{"metadata":{}},"method":"GET","statusCode":200,"timestamp":"2026-02-17T07:57:28.202Z","url":"/profile"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:07:57:28 +0000] \"GET /api/users/profile HTTP/1.1\" 200 440 \"-\" \"curl/8.7.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T07:57:28.203Z"}
+{"level":"info","message":"User profile retrieved","metadata":{"metadata":{}},"method":"GET","statusCode":200,"timestamp":"2026-02-17T07:57:43.976Z","url":"/profile"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:07:57:43 +0000] \"GET /api/users/profile HTTP/1.1\" 200 440 \"-\" \"curl/8.7.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T07:57:43.978Z"}
+{"level":"error","message":"Validation error","metadata":{"error":"[\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_small\",\n    \"minimum\": 3,\n    \"inclusive\": true,\n    \"path\": [\n      \"body\",\n      \"username\"\n    ],\n    \"message\": \"Username must be at least 3 characters\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_small\",\n    \"minimum\": 10,\n    \"inclusive\": true,\n    \"path\": [\n      \"body\",\n      \"mobile\"\n    ],\n    \"message\": \"Mobile number must be at least 10 digits\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"regex\",\n    \"pattern\": \"/^\\\\+?[0-9]{10,15}$/\",\n    \"path\": [\n      \"body\",\n      \"mobile\"\n    ],\n    \"message\": \"Invalid mobile number format\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"email\",\n    \"pattern\": \"/^(?!\\\\.)(?!.*\\\\.\\\\.)([A-Za-z0-9_'+\\\\-\\\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\\\-]*\\\\.)+[A-Za-z]{2,}$/\",\n    \"path\": [\n      \"body\",\n      \"email\"\n    ],\n    \"message\": \"Invalid email format\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_small\",\n    \"minimum\": 8,\n    \"inclusive\": true,\n    \"path\": [\n      \"body\",\n      \"password\"\n    ],\n    \"message\": \"Password must be at least 8 characters\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"regex\",\n    \"pattern\": \"/[A-Z]/\",\n    \"path\": [\n      \"body\",\n      \"password\"\n    ],\n    \"message\": \"Password must contain at least one uppercase letter\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"regex\",\n    \"pattern\": \"/[0-9]/\",\n    \"path\": [\n      \"body\",\n      \"password\"\n    ],\n    \"message\": \"Password must contain at least one number\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"regex\",\n    \"pattern\": \"/[^A-Za-z0-9]/\",\n    \"path\": [\n      \"body\",\n      \"password\"\n    ],\n    \"message\": \"Password must contain at least one special character\"\n  }\n]","metadata":{"error":"[\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_small\",\n    \"minimum\": 3,\n    \"inclusive\": true,\n    \"path\": [\n      \"body\",\n      \"username\"\n    ],\n    \"message\": \"Username must be at least 3 characters\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_small\",\n    \"minimum\": 10,\n    \"inclusive\": true,\n    \"path\": [\n      \"body\",\n      \"mobile\"\n    ],\n    \"message\": \"Mobile number must be at least 10 digits\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"regex\",\n    \"pattern\": \"/^\\\\+?[0-9]{10,15}$/\",\n    \"path\": [\n      \"body\",\n      \"mobile\"\n    ],\n    \"message\": \"Invalid mobile number format\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"email\",\n    \"pattern\": \"/^(?!\\\\.)(?!.*\\\\.\\\\.)([A-Za-z0-9_'+\\\\-\\\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\\\-]*\\\\.)+[A-Za-z]{2,}$/\",\n    \"path\": [\n      \"body\",\n      \"email\"\n    ],\n    \"message\": \"Invalid email format\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"too_small\",\n    \"minimum\": 8,\n    \"inclusive\": true,\n    \"path\": [\n      \"body\",\n      \"password\"\n    ],\n    \"message\": \"Password must be at least 8 characters\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"regex\",\n    \"pattern\": \"/[A-Z]/\",\n    \"path\": [\n      \"body\",\n      \"password\"\n    ],\n    \"message\": \"Password must contain at least one uppercase letter\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"regex\",\n    \"pattern\": \"/[0-9]/\",\n    \"path\": [\n      \"body\",\n      \"password\"\n    ],\n    \"message\": \"Password must contain at least one number\"\n  },\n  {\n    \"origin\": \"string\",\n    \"code\": \"invalid_format\",\n    \"format\": \"regex\",\n    \"pattern\": \"/[^A-Za-z0-9]/\",\n    \"path\": [\n      \"body\",\n      \"password\"\n    ],\n    \"message\": \"Password must contain at least one special character\"\n  }\n]"}},"timestamp":"2026-02-17T07:58:07.173Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:07:58:07 +0000] \"POST /api/users/register HTTP/1.1\" 400 68 \"-\" \"curl/8.7.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T07:58:07.174Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:02:07.887Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:02:07.908Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:02:09.913Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:02:09.923Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:10:52.964Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:10:52.974Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:10:52.975Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:11:55.300Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:11:55.310Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:11:55.311Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:11:56.516Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:11:56.525Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:11:56.526Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:12:10.985Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:10.992Z"}
+{"level":"info","message":"Collection 'tasks' created","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.014Z"}
+{"level":"info","message":"Indexes created for 'tasks'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.025Z"}
+{"level":"info","message":"Collection 'activities' created","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.030Z"}
+{"level":"info","message":"Indexes created for 'activities'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.042Z"}
+{"level":"info","message":"Collection 'comments' created","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.049Z"}
+{"level":"info","message":"Indexes created for 'comments'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.059Z"}
+{"level":"info","message":"Collection 'tags' created","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.064Z"}
+{"level":"info","message":"Indexes created for 'tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.069Z"}
+{"level":"info","message":"Collection 'task_meta' created","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.077Z"}
+{"level":"info","message":"Indexes created for 'task_meta'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.081Z"}
+{"level":"info","message":"Collection 'task_tags' created","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.086Z"}
+{"level":"info","message":"Indexes created for 'task_tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.092Z"}
+{"level":"info","message":"✓ All collections initialized","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.093Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:12:11.093Z"}
+{"level":"info","message":"\n⏹ Shutting down...","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:14.242Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:13:15.920Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:15.927Z"}
+{"level":"info","message":"Indexes created for 'tasks'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:15.929Z"}
+{"level":"info","message":"Indexes created for 'activities'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:15.933Z"}
+{"level":"info","message":"Indexes created for 'comments'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:15.935Z"}
+{"level":"info","message":"Indexes created for 'tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:15.938Z"}
+{"level":"info","message":"Indexes created for 'task_meta'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:15.940Z"}
+{"level":"info","message":"Indexes created for 'task_tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:15.942Z"}
+{"level":"info","message":"✓ All collections initialized","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:15.942Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:15.943Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:08:13:37 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"curl/8.7.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:13:37.932Z"}
+{"level":"info","message":"\n⏹ Shutting down...","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:36.924Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:15:40.803Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:40.809Z"}
+{"level":"info","message":"Indexes created for 'tasks'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:40.811Z"}
+{"level":"info","message":"Indexes created for 'activities'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:40.813Z"}
+{"level":"info","message":"Indexes created for 'comments'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:40.815Z"}
+{"level":"info","message":"Indexes created for 'tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:40.817Z"}
+{"level":"info","message":"Indexes created for 'task_meta'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:40.819Z"}
+{"level":"info","message":"Indexes created for 'task_tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:40.820Z"}
+{"level":"info","message":"✓ All collections initialized","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:40.820Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:15:40.821Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:16:36.290Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:16:36.302Z"}
+{"level":"info","message":"Indexes created for 'tasks'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:16:36.304Z"}
+{"level":"info","message":"Indexes created for 'activities'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:16:36.308Z"}
+{"level":"info","message":"Indexes created for 'comments'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:16:36.310Z"}
+{"level":"info","message":"Indexes created for 'tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:16:36.312Z"}
+{"level":"info","message":"Indexes created for 'task_meta'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:16:36.314Z"}
+{"level":"info","message":"Indexes created for 'task_tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:16:36.316Z"}
+{"level":"info","message":"✓ All collections initialized","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:16:36.316Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:16:36.317Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:36:00.809Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:00.817Z"}
+{"level":"info","message":"Indexes created for 'tasks'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:00.820Z"}
+{"level":"info","message":"Indexes created for 'activities'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:00.822Z"}
+{"level":"info","message":"Indexes created for 'comments'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:00.825Z"}
+{"level":"info","message":"Indexes created for 'tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:00.828Z"}
+{"level":"info","message":"Indexes created for 'task_meta'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:00.830Z"}
+{"level":"info","message":"Indexes created for 'task_tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:00.833Z"}
+{"level":"info","message":"✓ All collections initialized","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:00.833Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:00.834Z"}
+{"level":"info","message":"\n⏹ Shutting down...","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:14.670Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T08:36:22.772Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:22.781Z"}
+{"level":"info","message":"Indexes created for 'tasks'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:22.784Z"}
+{"level":"info","message":"Indexes created for 'activities'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:22.788Z"}
+{"level":"info","message":"Indexes created for 'comments'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:22.791Z"}
+{"level":"info","message":"Indexes created for 'tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:22.795Z"}
+{"level":"info","message":"Indexes created for 'task_meta'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:22.798Z"}
+{"level":"info","message":"Indexes created for 'task_tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:22.800Z"}
+{"level":"info","message":"✓ All collections initialized","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:22.800Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T08:36:22.801Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:23:55 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:23:55.757Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:23:59 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:23:59.144Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:24:24 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:24:24.624Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:24:25 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:24:25.883Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:24:29 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:24:29.857Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:24:31 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:24:31.213Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:24:32 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:24:32.531Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:24:44 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:24:44.286Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:24:45 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:24:45.355Z"}
+{"level":"warn","message":"Route not found","metadata":{"metadata":{}},"method":"POST","statusCode":404,"timestamp":"2026-02-17T09:25:07.690Z","url":"/api/auth/logi"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:09:25:07 +0000] \"POST /api/auth/logi HTTP/1.1\" 404 63 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:25:07.691Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:25:27 +0000] \"POST /api/auth/login HTTP/1.1\" 200 300 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:25:27.225Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:25:43 +0000] \"GET /api/auth/whoami HTTP/1.1\" 200 91 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:25:43.855Z"}
+{"level":"error","message":"::1 - - [17/Feb/2026:09:25:51 +0000] \"GET /api/auth/whoami HTTP/1.1\" 401 53 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:25:51.497Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:26:29 +0000] \"GET /api/auth/whoami HTTP/1.1\" 200 91 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:26:29.699Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:26:31 +0000] \"GET /api/auth/whoami HTTP/1.1\" 200 91 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:26:31.690Z"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:35:47 +0000] \"GET / HTTP/1.1\" 200 67 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:35:47.440Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:09:36:18 +0000] \"GET /api/users/profile HTTP/1.1\" 401 29 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:36:18.527Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:09:36:58 +0000] \"GET /api/users/ HTTP/1.1\" 401 29 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:36:58.679Z"}
+{"level":"info","message":"Users list retrieved","metadata":{"metadata":{}},"method":"GET","statusCode":200,"timestamp":"2026-02-17T09:37:19.176Z","url":"/"}
+{"level":"http","message":"::1 - - [17/Feb/2026:09:37:19 +0000] \"GET /api/users/ HTTP/1.1\" 200 685 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:37:19.178Z"}
+{"level":"info","message":"User retrieved by ID","metadata":{"metadata":{}},"method":"GET","statusCode":200,"timestamp":"2026-02-17T09:38:48.720Z","url":"/69941f4a1d3930f3f3534cfe"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:09:38:48 +0000] \"GET /api/users/69941f4a1d3930f3f3534cfe HTTP/1.1\" 200 440 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:38:48.726Z"}
+{"level":"info","message":"✓ Connected to MongoDB","metadata":{"database":"crud-express","metadata":{"database":"crud-express"}},"timestamp":"2026-02-17T09:40:58.100Z"}
+{"level":"info","message":"Indexes created for 'users'","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:40:58.132Z"}
+{"level":"info","message":"Indexes created for 'tasks'","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:40:58.134Z"}
+{"level":"info","message":"Indexes created for 'activities'","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:40:58.136Z"}
+{"level":"info","message":"Indexes created for 'comments'","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:40:58.138Z"}
+{"level":"info","message":"Indexes created for 'tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:40:58.140Z"}
+{"level":"info","message":"Indexes created for 'task_meta'","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:40:58.141Z"}
+{"level":"info","message":"Indexes created for 'task_tags'","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:40:58.142Z"}
+{"level":"info","message":"✓ All collections initialized","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:40:58.142Z"}
+{"level":"info","message":"✓ Server running on port 3000","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:40:58.143Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:09:44:14 +0000] \"POST /api/auth/register HTTP/1.1\" 409 35 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:44:14.553Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:09:44:22 +0000] \"POST /api/auth/register HTTP/1.1\" 400 32 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:44:22.339Z"}
+{"level":"error","message":"::1 - - [17/Feb/2026:09:44:36 +0000] \"POST /api/auth/register HTTP/1.1\" 500 33 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:44:36.198Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:09:44:40 +0000] \"POST /api/auth/register HTTP/1.1\" 400 49 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:44:40.317Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:09:47:05 +0000] \"POST /api/auth/register HTTP/1.1\" 400 39 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T09:47:05.899Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:13:38 +0000] \"GET /api/users/profile HTTP/1.1\" 401 29 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:13:38.567Z"}
+{"level":"error","message":"Error getting user by ID","metadata":{"error":"User not found","metadata":{"error":"User not found","userId":"699311cb925eee14460f7864"},"userId":"699311cb925eee14460f7864"},"timestamp":"2026-02-17T10:13:54.451Z"}
+{"level":"warn","message":"User not found","metadata":{"metadata":{}},"method":"GET","statusCode":404,"timestamp":"2026-02-17T10:13:54.452Z","url":"/profile"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:13:54 +0000] \"GET /api/users/profile HTTP/1.1\" 404 62 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:13:54.452Z"}
+{"level":"info","message":"Users list retrieved","metadata":{"metadata":{}},"method":"GET","statusCode":200,"timestamp":"2026-02-17T10:14:39.785Z","url":"/"}
+{"level":"http","message":"::1 - - [17/Feb/2026:10:14:39 +0000] \"GET /api/users/ HTTP/1.1\" 200 2259 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:14:39.793Z"}
+{"level":"info","message":"Users list retrieved","metadata":{"metadata":{}},"method":"GET","statusCode":200,"timestamp":"2026-02-17T10:14:51.708Z","url":"/"}
+{"level":"http","message":"::1 - - [17/Feb/2026:10:14:51 +0000] \"GET /api/users HTTP/1.1\" 200 2259 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:14:51.711Z"}
+{"level":"info","message":"User retrieved by ID","metadata":{"metadata":{}},"method":"GET","statusCode":200,"timestamp":"2026-02-17T10:15:30.279Z","url":"/65d1f85e8c9b4a1d2e3f4a05"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:15:30 +0000] \"GET /api/users/65d1f85e8c9b4a1d2e3f4a05 HTTP/1.1\" 200 462 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:15:30.284Z"}
+{"level":"error","message":"Error updating user","metadata":{"error":"Performing an update on the path '_id' would modify the immutable field '_id'","metadata":{"error":"Performing an update on the path '_id' would modify the immutable field '_id'","userId":"65d1f85e8c9b4a1d2e3f4a05"},"userId":"65d1f85e8c9b4a1d2e3f4a05"},"timestamp":"2026-02-17T10:17:33.321Z"}
+{"level":"error","message":"Error updating user","metadata":{"error":"Performing an update on the path '_id' would modify the immutable field '_id'","metadata":{"error":"Performing an update on the path '_id' would modify the immutable field '_id'"}},"method":"PATCH","stack":"MongoServerError: Performing an update on the path '_id' would modify the immutable field '_id'\n    at UpdateOneOperation.handleOk (/Users/razikuljoni/WorkSpace/Personal Work Space/crud-express/node_modules/.pnpm/mongodb@7.1.0/node_modules/mongodb/lib/operations/update.js:70:19)\n    at tryOperation (/Users/razikuljoni/WorkSpace/Personal Work Space/crud-express/node_modules/.pnpm/mongodb@7.1.0/node_modules/mongodb/lib/operations/execute_operation.js:217:34)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async executeOperation (/Users/razikuljoni/WorkSpace/Personal Work Space/crud-express/node_modules/.pnpm/mongodb@7.1.0/node_modules/mongodb/lib/operations/execute_operation.js:80:16)\n    at async Collection.updateOne (/Users/razikuljoni/WorkSpace/Personal Work Space/crud-express/node_modules/.pnpm/mongodb@7.1.0/node_modules/mongodb/lib/collection.js:238:16)\n    at async Module.updateUserById (file:///Users/razikuljoni/WorkSpace/Personal%20Work%20Space/crud-express/src/models/user.model.js:67:20)\n    at async Module.updateUser (file:///Users/razikuljoni/WorkSpace/Personal%20Work%20Space/crud-express/src/services/user.service.js:169:24)\n    at async updateUser (file:///Users/razikuljoni/WorkSpace/Personal%20Work%20Space/crud-express/src/controllers/user.controller.js:206:24)","statusCode":500,"timestamp":"2026-02-17T10:17:33.325Z","url":"/65d1f85e8c9b4a1d2e3f4a05"}
+{"level":"error","message":"::1 - - [17/Feb/2026:10:17:33 +0000] \"PATCH /api/users/65d1f85e8c9b4a1d2e3f4a05 HTTP/1.1\" 500 69 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:17:33.327Z"}
+{"level":"info","message":"User updated successfully","metadata":{"metadata":{"updatedFields":["firstName","middleName","username","email"],"userId":"65d1f85e8c9b4a1d2e3f4a05"},"updatedFields":["firstName","middleName","username","email"],"userId":"65d1f85e8c9b4a1d2e3f4a05"},"timestamp":"2026-02-17T10:18:09.434Z"}
+{"level":"info","message":"User updated successfully","metadata":{"metadata":{}},"method":"PATCH","statusCode":200,"timestamp":"2026-02-17T10:18:09.435Z","url":"/65d1f85e8c9b4a1d2e3f4a05"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:18:09 +0000] \"PATCH /api/users/65d1f85e8c9b4a1d2e3f4a05 HTTP/1.1\" 200 483 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:18:09.436Z"}
+{"level":"error","message":"Validation error","metadata":{"error":"[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"body\",\n      \"middleName\"\n    ],\n    \"message\": \"Invalid input: expected string, received null\"\n  }\n]","metadata":{"error":"[\n  {\n    \"expected\": \"string\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"body\",\n      \"middleName\"\n    ],\n    \"message\": \"Invalid input: expected string, received null\"\n  }\n]"}},"timestamp":"2026-02-17T10:18:48.111Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:18:48 +0000] \"PATCH /api/users/65d1f85e8c9b4a1d2e3f4a05 HTTP/1.1\" 400 68 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:18:48.114Z"}
+{"level":"info","message":"User updated successfully","metadata":{"metadata":{"updatedFields":["middleName","lastName"],"userId":"65d1f85e8c9b4a1d2e3f4a05"},"updatedFields":["middleName","lastName"],"userId":"65d1f85e8c9b4a1d2e3f4a05"},"timestamp":"2026-02-17T10:19:31.548Z"}
+{"level":"info","message":"User updated successfully","metadata":{"metadata":{}},"method":"PATCH","statusCode":200,"timestamp":"2026-02-17T10:19:31.551Z","url":"/65d1f85e8c9b4a1d2e3f4a05"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:19:31 +0000] \"PATCH /api/users/65d1f85e8c9b4a1d2e3f4a05 HTTP/1.1\" 200 477 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:19:31.552Z"}
+{"level":"error","message":"Error deleting user","metadata":{"error":"User not found","metadata":{"error":"User not found","userId":"69941f4a1d3930f3f3534cfe"},"userId":"69941f4a1d3930f3f3534cfe"},"timestamp":"2026-02-17T10:20:01.460Z"}
+{"level":"warn","message":"User not found","metadata":{"metadata":{}},"method":"DELETE","statusCode":404,"timestamp":"2026-02-17T10:20:01.461Z","url":"/69941f4a1d3930f3f3534cfe"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:20:01 +0000] \"DELETE /api/users/69941f4a1d3930f3f3534cfe HTTP/1.1\" 404 62 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:20:01.461Z"}
+{"level":"error","message":"Error getting user by ID","metadata":{"error":"User not found","metadata":{"error":"User not found","userId":"699311cb925eee14460f7864"},"userId":"699311cb925eee14460f7864"},"timestamp":"2026-02-17T10:20:15.205Z"}
+{"level":"warn","message":"User not found","metadata":{"metadata":{}},"method":"GET","statusCode":404,"timestamp":"2026-02-17T10:20:15.205Z","url":"/profile"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:20:15 +0000] \"GET /api/users/profile HTTP/1.1\" 404 62 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:20:15.206Z"}
+{"level":"warn","message":"Route not found","metadata":{"metadata":{}},"method":"POST","statusCode":404,"timestamp":"2026-02-17T10:21:09.342Z","url":"/api/auth/logi"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:21:09 +0000] \"POST /api/auth/logi HTTP/1.1\" 404 63 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:21:09.343Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:21:14 +0000] \"POST /api/auth/login HTTP/1.1\" 401 31 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:21:14.077Z"}
+{"level":"info","message":"Users list retrieved","metadata":{"metadata":{}},"method":"GET","statusCode":200,"timestamp":"2026-02-17T10:21:35.090Z","url":"/"}
+{"level":"http","message":"::1 - - [17/Feb/2026:10:21:35 +0000] \"GET /api/users HTTP/1.1\" 200 2236 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:21:35.093Z"}
+{"level":"info","message":"User updated successfully","metadata":{"metadata":{"updatedFields":["passwordHash"],"userId":"65d1f85e8c9b4a1d2e3f4a05"},"updatedFields":["passwordHash"],"userId":"65d1f85e8c9b4a1d2e3f4a05"},"timestamp":"2026-02-17T10:24:49.579Z"}
+{"level":"info","message":"User updated successfully","metadata":{"metadata":{}},"method":"PATCH","statusCode":200,"timestamp":"2026-02-17T10:24:49.582Z","url":"/65d1f85e8c9b4a1d2e3f4a05"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:24:49 +0000] \"PATCH /api/users/65d1f85e8c9b4a1d2e3f4a05 HTTP/1.1\" 200 477 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:24:49.584Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:25:02 +0000] \"POST /api/auth/login HTTP/1.1\" 401 31 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:25:02.625Z"}
+{"level":"error","message":"::1 - - [17/Feb/2026:10:25:19 +0000] \"POST /api/auth/login HTTP/1.1\" 500 33 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:25:19.700Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:31:32 +0000] \"POST /api/auth/register HTTP/1.1\" 400 39 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:31:32.097Z"}
+{"level":"warn","message":"::1 - - [17/Feb/2026:10:36:52 +0000] \"POST /api/auth/register HTTP/1.1\" 400 39 \"-\" \"PostmanRuntime/7.39.1\"","metadata":{"metadata":{}},"timestamp":"2026-02-17T10:36:52.528Z"}

@@ -1,0 +1,110 @@
+[
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8001" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6001" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7001" },
+        "title": "Great work on the middleware!",
+        "content": "The JWT verification is working perfectly. Clean implementation with good error handling.",
+        "createdAt": { "$date": "2024-02-10T14:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-10T14:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8002" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6001" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7002" },
+        "title": "Security Review",
+        "content": "Salt rounds of 10 looks good. Maybe increase to 12 for production? Performance trade-off is minimal.",
+        "createdAt": { "$date": "2024-02-10T17:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-10T17:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8003" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6001" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7003" },
+        "title": "Testing Status",
+        "content": "I've tested both endpoints with Postman. All validation is working as expected. Registration creates user and login returns valid JWT.",
+        "createdAt": { "$date": "2024-02-11T14:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-11T14:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8004" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6001" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7003" },
+        "title": "Question about token expiry",
+        "content": "What expiration time did you set for JWT tokens? Should we add refresh token functionality?",
+        "createdAt": { "$date": "2024-02-12T09:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-12T09:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8005" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6002" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7004" },
+        "title": "Wireframes approved",
+        "content": "The wireframes look great! The layout is clean and intuitive. Let's proceed with implementation.",
+        "createdAt": { "$date": "2024-02-12T15:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-12T15:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8006" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6002" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7005" },
+        "title": "Component Structure",
+        "content": "Are you using Context API or Redux for state management? Just want to make sure we're aligned.",
+        "createdAt": { "$date": "2024-02-14T10:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-14T10:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8007" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6003" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7006" },
+        "title": "API Route Structure Looks Good",
+        "content": "Following RESTful conventions properly. The route organization is clean and maintainable.",
+        "createdAt": { "$date": "2024-02-13T12:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-13T12:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8008" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6003" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7007" },
+        "title": "Progress Update",
+        "content": "Almost done with CRUD operations. Just need to add filtering and pagination to the GET endpoint.",
+        "createdAt": { "$date": "2024-02-15T16:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-15T16:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8009" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6005" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7008" },
+        "title": "Schema Review",
+        "content": "The validation schema is comprehensive. We should add similar schemas for all other entities.",
+        "createdAt": { "$date": "2024-02-14T13:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-14T13:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8010" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6005" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7009" },
+        "title": "Middleware Performance",
+        "content": "The validation middleware adds minimal overhead. Response times are still under 50ms.",
+        "createdAt": { "$date": "2024-02-15T11:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-15T11:00:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8011" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6007" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7010" },
+        "title": "Verified on all devices",
+        "content": "Tested on iPhone 12, Samsung Galaxy S21, and iPad. Button is properly centered on all devices.",
+        "createdAt": { "$date": "2024-02-16T12:30:00.000Z" },
+        "updatedAt": { "$date": "2024-02-16T12:30:00.000Z" }
+    },
+    {
+        "_id": { "$oid": "65d1f85e8c9b4a1d2e3f8012" },
+        "taskId": { "$oid": "65d1f85e8c9b4a1d2e3f6003" },
+        "activityId": { "$oid": "65d1f85e8c9b4a1d2e3f7007" },
+        "title": "Testing Required",
+        "content": "Once you complete pagination, let's do a full integration test with the frontend team.",
+        "createdAt": { "$date": "2024-02-17T10:00:00.000Z" },
+        "updatedAt": { "$date": "2024-02-17T10:00:00.000Z" }
+    }
+]

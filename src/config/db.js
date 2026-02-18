@@ -1,4 +1,12 @@
 // connect mongodb with native driver connection
+import { initializeActivityCollection } from "#models/activity.model.js";
+import { initializeCommentCollection } from "#models/comment.model.js";
+import { initializeTagCollection } from "#models/tag.model.js";
+import { initializeTaskMetaCollection } from "#models/task-meta.model.js";
+import { initializeTaskTagsCollection } from "#models/task-tags.model.js";
+import { initializeTaskCollection } from "#models/task.model.js";
+import { initializeUserCollection } from "#models/user.model.js";
+import logger from "#utils/logger.js";
 import { MongoClient } from "mongodb";
 
 let dbClient;
@@ -11,10 +19,27 @@ export const connectDb = async (uri) => {
     try {
         dbClient = new MongoClient(uri);
         await dbClient.connect();
-        console.log("✓ Connected to MongoDB");
+        logger.info("✓ Connected to MongoDB", {
+            database: DB_NAME,
+        });
+
+        // Initialize all collections with indexes (validation handled by Zod)
+        await initializeUserCollection();
+        await initializeTaskCollection();
+        await initializeActivityCollection();
+        await initializeCommentCollection();
+        await initializeTagCollection();
+        await initializeTaskMetaCollection();
+        await initializeTaskTagsCollection();
+
+        logger.info("✓ All collections initialized");
+
         return dbClient;
     } catch (err) {
-        console.error("✗ MongoDB connection error:", err.message);
+        logger.error("✗ MongoDB connection error", {
+            error: err.message,
+            stack: err.stack,
+        });
         throw err;
     }
 };
@@ -30,6 +55,6 @@ export const closeDbConnection = async () => {
     if (dbClient) {
         await dbClient.close();
         dbClient = null;
-        console.log("✓ MongoDB connection closed");
+        logger.info("✓ MongoDB connection closed");
     }
 };

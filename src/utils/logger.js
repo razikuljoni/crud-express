@@ -63,7 +63,6 @@ const logger = winston.createLogger({
     transports: [
         new winston.transports.Console({
             format: combine(
-                colorize({ all: true }),
                 timestamp(),
                 errors({ stack: true }),
                 splat(),
@@ -79,6 +78,7 @@ const logger = winston.createLogger({
                         "url",
                     ],
                 }),
+                colorize({ level: true }), // Only colorize the level
                 devFormat,
             ),
         }),
