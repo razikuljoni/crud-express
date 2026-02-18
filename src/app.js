@@ -1,9 +1,9 @@
 import authRoutes from "#routes/auth.routes.js";
+import userRoutes from "#routes/user.routes.js";
 import logger from "#utils/logger.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
-import morgan from "morgan";
 
 const app = express();
 
@@ -15,17 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-// HTTP request logging
-app.use(
-    morgan("combined", {
-        stream: {
-            write: (message) => logger.info(message.trim()),
-        },
-    }),
-);
-
 // Routes
-app.get("/", (req, res) => {
+app.get("/", (_req, res) => {
     res.json({
         statusCode: 200,
         status: "ok",
@@ -35,14 +26,15 @@ app.get("/", (req, res) => {
 
 // API Routes
 app.use("/api/auth", authRoutes);
+app.use("/api/users", userRoutes);
 
 // 404 Handler
-app.use((req, res) => {
+app.use((_req, res) => {
     res.status(404).json({ error: "Not found" });
 });
 
 // Error Handler
-app.use((err, req, res, next) => {
+app.use((err, _req, res, _next) => {
     logger.error(err);
     res.status(err.status || 500).json({ error: err.message });
 });
