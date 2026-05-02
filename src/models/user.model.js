@@ -1,37 +1,42 @@
 // User model - Database operations only
 import { getDb } from "#config/db.js";
+import logger from "#utils/logger.js";
 import { ObjectId } from "mongodb";
 
 const COLLECTION_NAME = "users";
 
 export const createUser = async (userData) => {
-    const db = getDb();
+    const db = await getDb();
     const result = await db.collection(COLLECTION_NAME).insertOne(userData);
     return result;
 };
 
-export const getAllUsers = async () => {
-    const db = getDb();
-    return await db.collection(COLLECTION_NAME).find({}).toArray();
+export const getAllUsers = async (page = 1, limit = 10) => {
+    const db = await getDb();
+    const skip = (page - 1) * limit;
+    const total = await db.collection(COLLECTION_NAME).countDocuments();
+    const users = await db.collection(COLLECTION_NAME).find({}).skip(skip).limit(limit).toArray();
+    return { users, total };
 };
 
 export const findUserByUsername = async (username) => {
-    const db = getDb();
-    return await db.collection(COLLECTION_NAME).findOne({ username });
+    const db = await getDb();
+    const result = await db.collection(COLLECTION_NAME).findOne({ username });
+    return result;
 };
 
 export const findUserById = async (userId) => {
-    const db = getDb();
+    const db = await getDb();
     return await db.collection(COLLECTION_NAME).findOne({ _id: new ObjectId(userId) });
 };
 
 export const findUserByEmail = async (email) => {
-    const db = getDb();
+    const db = await getDb();
     return await db.collection(COLLECTION_NAME).findOne({ email });
 };
 
 export const updateUser = async (userId, updateData) => {
-    const db = getDb();
+    const db = await getDb();
     const result = await db
         .collection(COLLECTION_NAME)
         .updateOne({ _id: new ObjectId(userId) }, { $set: updateData });
@@ -39,13 +44,13 @@ export const updateUser = async (userId, updateData) => {
 };
 
 export const deleteUser = async (userId) => {
-    const db = getDb();
+    const db = await getDb();
     const result = await db.collection(COLLECTION_NAME).deleteOne({ _id: new ObjectId(userId) });
     return result;
 };
 
 export const isUserExists = async (username, email) => {
-    const db = getDb();
+    const db = await getDb();
     const existingUser = await db.collection(COLLECTION_NAME).findOne({
         $or: [{ username }, { email }],
     });

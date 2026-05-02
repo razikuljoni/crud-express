@@ -1,91 +1,60 @@
-// Auth controller - HTTP request/response handling only
+import { asyncHandler } from "#middlewares/asyncHandler.middleware.js";
 import * as authService from "#services/auth.service.js";
 import { verifyToken } from "#utils/jwt.util.js";
 
-// Register handler
-export const register = async (req, res) => {
-    try {
-        const { name, username, password } = req.body;
+export const register = asyncHandler(async (req, res) => {
+    const { name, username, password } = req.body;
 
-        // Validate input
-        const missingFields = [];
-        if (!name) missingFields.push("name");
-        if (!username) missingFields.push("username");
-        if (!password) missingFields.push("password");
+    const missingFields = [];
+    if (!name) missingFields.push("name");
+    if (!username) missingFields.push("username");
+    if (!password) missingFields.push("password");
 
-        if (missingFields.length > 0) {
-            const fieldList = missingFields.join(", ");
-            return res.status(400).json({
-                error: `${fieldList} ${missingFields.length === 1 ? "is" : "are"} required`,
-            });
-        }
-
-        if (password.length < 6) {
-            return res.status(400).json({ error: "Password must be at least 6 characters" });
-        }
-
-        // Call service
-        const result = await authService.registerUser(name, username, password);
-
-        res.status(201).json({
-            message: "User registered successfully",
-            user: result,
+    if (missingFields.length > 0) {
+        return res.status(400).json({
+            error: `${missingFields.join(", ")} ${missingFields.length === 1 ? "is" : "are"} required`,
         });
-    } catch (err) {
-        if (err.message === "Username already exists") {
-            return res.status(409).json({ error: err.message });
-        }
-        console.error("Registration error:", err.message);
-        res.status(500).json({ error: "Internal server error" });
     }
-};
 
-// Login handler
-export const login = async (req, res) => {
-    try {
-        const { username, password } = req.body;
-
-        // Validate input
-        if (!username || !password) {
-            return res.status(400).json({ error: "Username and password are required" });
-        }
-
-        // Call service
-        const result = await authService.loginUser(username, password);
-
-        res.json({
-            message: "Login successful",
-            token: result.token,
-            user: result.user,
-        });
-    } catch (err) {
-        // console.log('err', err);
-
-        if (err.message === "Invalid credentials") {
-            return res.status(401).json({ error: err.message });
-        }
-        console.error("Login error:", err.message);
-        res.status(500).json({ error: "Internal server error" });
+    if (password.length < 6) {
+        return res.status(400).json({ error: "Password must be at least 6 characters" });
     }
-};
 
-// whoami handler
-export const whoAmI = async (req, res) => {
-    try {
-        const authHeader = req.headers.authorization;
-        if (!authHeader || !authHeader.startsWith("Bearer ")) {
-            return res.status(401).json({ error: "Authorization header missing or malformed" });
-        }
+    const result = await authService.registerUser(name, username, password);
 
-        const token = authHeader.split(" ")[1];
-        const decoded = verifyToken(token);
+    res.status(201).json({
+        message: "User registered successfully",
+        user: result,
+    });
+});
 
-        res.json({
-            message: "Authenticated user",
-            user: { id: decoded.userId, username: decoded.username },
-        });
-    } catch (err) {
-        console.error("WhoAmI error:", err.message);
-        res.status(401).json({ error: "Invalid or expired token" });
+export const login = asyncHandler(async (req, res) => {
+    const { username, password } = req.body;
+
+    if (!username || !password) {
+        return res.status(400).json({ error: "Username and password are required" });
     }
-};
+
+    const result = await authService.loginUser(username, password);
+
+    res.json({
+        message: "Login successful",
+        token: result.token,
+        user: result.user,
+    });
+});
+
+export const whoAmI = asyncHandler(async (req, res) => {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+        return res.status(401).json({ error: "Authorization header missing or malformed" });
+    }
+
+    const token = authHeader.split(" ")[1];
+    const decoded = verifyToken(token);
+
+    res.json({
+        message: "Authenticated user",
+        user: { id: decoded.userId, username: decoded.username },
+    });
+});

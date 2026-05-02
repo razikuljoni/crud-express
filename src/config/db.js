@@ -1,4 +1,5 @@
 // connect mongodb with native driver connection
+import logger from "#utils/logger.js";
 import { MongoClient } from "mongodb";
 
 let dbClient;
@@ -11,25 +12,26 @@ export const connectDb = async (uri) => {
     try {
         dbClient = new MongoClient(uri);
         await dbClient.connect();
-        console.log("✓ Connected to MongoDB");
+        logger.info("MongoDB connection established ✅");
         return dbClient;
     } catch (err) {
-        console.error("✗ MongoDB connection error:", err.message);
+        logger.error("MongoDB connection error ❌:", err.message);
         throw err;
     }
 };
 
-export const getDb = () => {
+export const getDb = async () => {
     if (!dbClient) {
         throw new Error("Database client not initialized. Call connectDb first.");
     }
-    return dbClient.db(DB_NAME);
+    const db = await dbClient.db(DB_NAME);
+    return db;
 };
 
 export const closeDbConnection = async () => {
     if (dbClient) {
         await dbClient.close();
         dbClient = null;
-        console.log("✓ MongoDB connection closed");
+        logger.info("MongoDB connection closed ❌");
     }
 };

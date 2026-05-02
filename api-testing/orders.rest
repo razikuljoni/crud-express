@@ -1,0 +1,201 @@
+### Orders API Tests
+### Base URL: http://localhost:3000/api/v1
+
+### Variables
+@baseUrl = http://localhost:3000/api/v1/orders
+@token = YOUR_JWT_TOKEN_HERE
+@productId = YOUR_PRODUCT_ID_HERE
+
+### 
+### 1. Create an order
+POST {{baseUrl}}/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "items": [
+        {
+            "productId": "{{productId}}",
+            "quantity": 2,
+            "price": 1299.99
+        },
+        {
+            "productId": "{{productId}}",
+            "quantity": 1,
+            "price": 29.99
+        }
+    ],
+    "totalAmount": 2629.97,
+    "shippingAddress": {
+        "street": "123 Main Street",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10001",
+        "country": "USA"
+    }
+}
+
+### 
+### 2. Create another order
+POST {{baseUrl}}/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "items": [
+        {
+            "productId": "{{productId}}",
+            "quantity": 1,
+            "price": 149.99
+        }
+    ],
+    "totalAmount": 149.99,
+    "shippingAddress": {
+        "street": "456 Oak Avenue",
+        "city": "Los Angeles",
+        "state": "CA",
+        "zipCode": "90001",
+        "country": "USA"
+    }
+}
+
+### 
+### 3. Get all orders (default pagination)
+GET {{baseUrl}}/
+Authorization: Bearer {{token}}
+
+### 
+### 4. Get all orders with custom pagination
+GET {{baseUrl}}/?page=1&limit=1
+Authorization: Bearer {{token}}
+
+### 
+### 5. Get orders filtered by status
+GET {{baseUrl}}/?status=pending&page=1&limit=10
+Authorization: Bearer {{token}}
+
+### 
+### 6. Get my orders (current user)
+GET {{baseUrl}}/my
+Authorization: Bearer {{token}}
+
+### 
+### 7. Get my orders with pagination
+GET {{baseUrl}}/my?page=1&limit=5
+Authorization: Bearer {{token}}
+
+### 
+### 8. Get order by ID
+# Replace with actual order ID from response
+GET {{baseUrl}}/ORDER_ID_HERE
+Authorization: Bearer {{token}}
+
+### 
+### 9. Update order status
+PATCH {{baseUrl}}/ORDER_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "status": "confirmed"
+}
+
+### 
+### 10. Update order - Change to shipped
+PATCH {{baseUrl}}/ORDER_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "status": "shipped"
+}
+
+### 
+### 11. Update order - Change to delivered
+PATCH {{baseUrl}}/ORDER_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "status": "delivered"
+}
+
+### 
+### 12. Update order shipping address
+PATCH {{baseUrl}}/ORDER_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "shippingAddress": {
+        "street": "789 Updated Blvd",
+        "city": "Chicago",
+        "state": "IL",
+        "zipCode": "60601",
+        "country": "USA"
+    }
+}
+
+### 
+### 13. Cancel an order
+PATCH {{baseUrl}}/ORDER_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "status": "cancelled"
+}
+
+### 
+### 14. Delete order by ID
+DELETE {{baseUrl}}/ORDER_ID_HERE
+Authorization: Bearer {{token}}
+
+### 
+### 15. Create order - Missing items (should fail with 400)
+POST {{baseUrl}}/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "totalAmount": 100.00,
+    "shippingAddress": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10001",
+        "country": "USA"
+    }
+}
+
+### 
+### 16. Create order - Empty items array (should fail with 400)
+POST {{baseUrl}}/
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "items": [],
+    "totalAmount": 100.00,
+    "shippingAddress": {
+        "street": "123 Main St",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10001",
+        "country": "USA"
+    }
+}
+
+### 
+### 17. Create order - Invalid status update (should fail with 400)
+PATCH {{baseUrl}}/ORDER_ID_HERE
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "status": "invalid_status"
+}
+
+### 
+### 18. Access without token (should fail with 401)
+GET {{baseUrl}}/
