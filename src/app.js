@@ -32,11 +32,17 @@ app.get("/", (_req, res) => {
     });
 });
 
-app.use("/api/v1/auth", authRoutes);
-app.use("/api/v1/users", userRoutes);
-app.use("/api/v1/categories", categoryRoutes);
-app.use("/api/v1/products", productRoutes);
-app.use("/api/v1/orders", orderRoutes);
+// ------------------ Routes ------------------
+// Base route for all API endpoints
+const apiV1 = express.Router();
+app.use("/api/v1", apiV1);
+
+// Register all routes under /api/v1
+apiV1.use("/auth", authRoutes);
+apiV1.use("/users", userRoutes);
+apiV1.use("/categories", categoryRoutes);
+apiV1.use("/products", productRoutes);
+apiV1.use("/orders", orderRoutes);
 
 // 404 Handler
 app.use((req, res) => {
