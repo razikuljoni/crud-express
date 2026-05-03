@@ -48,28 +48,41 @@ crud-express/
 │   │   ├── user.controller.js     # User CRUD handlers
 │   │   ├── category.controller.js # Category CRUD handlers
 │   │   ├── product.controller.js  # Product CRUD handlers
-│   │   └── order.controller.js    # Order CRUD handlers
+│   │   ├── order.controller.js    # Order CRUD handlers
+│   │   ├── review.controller.js   # Review request handlers (NEW)
+│   │   ├── wishlist.controller.js # Wishlist request handlers (NEW)
+│   │   └── analytics.controller.js # Analytics request handlers (NEW)
 │   ├── middlewares/
 │   │   ├── asyncHandler.middleware.js  # Wraps async routes to prevent crashes
 │   │   ├── auth.middleware.js          # JWT verification
+│   │   ├── requestId.middleware.js     # Request ID assignment
 │   │   └── validate.middleware.js      # Zod schema validation
 │   ├── models/
 │   │   ├── user.model.js          # User database operations
 │   │   ├── category.model.js      # Category database operations
 │   │   ├── product.model.js       # Product database operations
-│   │   └── order.model.js         # Order database operations
+│   │   ├── order.model.js         # Order database operations
+│   │   ├── review.model.js        # Review operations + aggregations (NEW)
+│   │   ├── wishlist.model.js      # Wishlist operations + $addToSet/$pull (NEW)
+│   │   └── analytics.model.js     # Analytics aggregations (NEW)
 │   ├── routes/
 │   │   ├── auth.routes.js         # Auth route definitions
 │   │   ├── user.routes.js         # User route definitions
 │   │   ├── category.routes.js     # Category route definitions
 │   │   ├── product.routes.js      # Product route definitions
-│   │   └── order.routes.js        # Order route definitions
+│   │   ├── order.routes.js        # Order route definitions
+│   │   ├── review.routes.js       # Review route definitions (NEW)
+│   │   ├── wishlist.routes.js     # Wishlist route definitions (NEW)
+│   │   └── analytics.routes.js    # Analytics route definitions (NEW)
 │   ├── services/
 │   │   ├── auth.service.js        # Auth business logic
 │   │   ├── user.service.js        # User business logic
 │   │   ├── category.service.js    # Category business logic
 │   │   ├── product.service.js     # Product business logic
-│   │   └── order.service.js       # Order business logic
+│   │   ├── order.service.js       # Order business logic
+│   │   ├── review.service.js      # Review business logic (NEW)
+│   │   ├── wishlist.service.js    # Wishlist business logic (NEW)
+│   │   └── analytics.service.js   # Analytics business logic (NEW)
 │   ├── utils/
 │   │   ├── logger.js              # Winston logger with HTTP middleware
 │   │   ├── jwt.util.js            # JWT generation/verification
@@ -77,13 +90,16 @@ crud-express/
 │   │   └── validation.schema.js   # Zod schemas for all routes
 │   ├── app.js                     # Express app setup & middleware
 │   └── server.js                  # Bootstrap + graceful shutdown + recovery
-├── tests/
+├── api-testing/                    # REST Client test files
 │   ├── api.rest                   # Master test suite
 │   ├── auth.rest                  # Authentication tests
 │   ├── users.rest                 # User API tests
 │   ├── categories.rest            # Category API tests
 │   ├── products.rest              # Product API tests
-│   └── orders.rest                # Order API tests
+│   ├── orders.rest                # Order API tests
+│   ├── reviews.rest               # Review API tests (NEW)
+│   ├── wishlist.rest              # Wishlist API tests (NEW)
+│   └── analytics.rest             # Analytics API tests (NEW)
 ├── logs/                          # Auto-generated log files
 │   ├── app.log                    # All logs (JSON)
 │   ├── error.log                  # Error-only logs (JSON)
@@ -116,6 +132,36 @@ Request → Routes → Middleware → Controller → Service → Model → Datab
 4. **Services** - Business logic, data transformation, orchestration
 5. **Models** - Direct database operations (CRUD queries)
 6. **Utils** - Shared utilities (logger, JWT, password hashing, validation schemas)
+### Co-Relational Modules (Advanced)
+
+The application includes advanced modules demonstrating MongoDB co-relational patterns:
+
+#### Reviews Module
+- **Purpose**: Product rating and review system
+- **MongoDB Operators**: `$lookup` (join users/products), `$group` + `$avg` (average rating), `$unwind`, `$sort`, `$skip`, `$limit`
+- **Key Features**:
+  - One review per user per product (enforced in service layer)
+  - Automatic average rating calculation using aggregation
+  - Joined queries to include user/product details
+
+#### Wishlist Module
+- **Purpose**: Many-to-many relationship between users and products
+- **MongoDB Operators**: `$addToSet` (add unique items), `$pull` (remove items), `$lookup` (populate products with categories), `$in` (check membership)
+- **Key Features**:
+  - Uses `$addToSet` to prevent duplicate products in wishlist
+  - Array-based design for efficient product storage
+  - Populated queries with category details
+
+#### Analytics Module
+- **Purpose**: Business intelligence and reporting
+- **MongoDB Operators**: `$unwind`, `$multiply`, `$sum`, `$group`, `$sort`, `$limit`, `$lookup`, `$month`, `$match` with date ranges
+- **Key Features**:
+  - Sales analytics with date range filtering
+  - Top products by quantity sold and revenue
+  - Category-wise sales breakdown
+  - Monthly sales trends using `$month` operator
+  - Dashboard combining multiple aggregations
+
 
 ### Request Flow
 
@@ -276,6 +322,47 @@ Base URL: `http://localhost:3000/api/v1`
 | `PATCH` | `/orders/:id` | Yes | Update order (status, address) |
 | `DELETE` | `/orders/:id` | Yes | Delete order |
 
+### Reviews (`/api/v1/reviews`) - NEW
+
+**MongoDB Operators**: `$lookup`, `$group`, `$avg`, `$unwind`, `$match`, `$sort`, `$skip`, `$limit`
+
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| `POST` | `/reviews/` | Yes | Create a product review (1 per user per product) |
+| `GET` | `/reviews/` | Yes | List all reviews (paginated) |
+| `GET` | `/reviews/my` | Yes | Get current user's reviews (joined with products) |
+| `GET` | `/reviews/product/:productId` | Yes | Get reviews for a product (joined with users, includes avg rating) |
+| `GET` | `/reviews/:id` | Yes | Get review by ID |
+| `PATCH` | `/reviews/:id` | Yes | Update review (owner only) |
+| `DELETE` | `/reviews/:id` | Yes | Delete review (owner only, recalculates avg rating) |
+
+### Wishlist (`/api/v1/wishlist`) - NEW
+
+**MongoDB Operators**: `$addToSet`, `$pull`, `$lookup`, `$in`, `$match`, `$unwind`
+
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| `GET` | `/wishlist/` | Yes | Get user's wishlist (populated with product & category details) |
+| `POST` | `/wishlist/add` | Yes | Add product to wishlist (uses `$addToSet` for uniqueness) |
+| `DELETE` | `/wishlist/remove/:productId` | Yes | Remove product from wishlist (uses `$pull`) |
+| `DELETE` | `/wishlist/clear` | Yes | Clear entire wishlist |
+| `GET` | `/wishlist/check/:productId` | Yes | Check if product is in wishlist (uses `$in`) |
+
+### Analytics (`/api/v1/analytics`) - NEW
+
+**MongoDB Operators**: `$unwind`, `$multiply`, `$sum`, `$group`, `$sort`, `$limit`, `$lookup`, `$month`, `$match`, `$first`, `$max`
+
+| Method | Endpoint | Auth | Description |
+|--------|----------|------|-------------|
+| `GET` | `/analytics/dashboard` | Yes | Get combined dashboard stats (sales, top products, categories, trends) |
+| `GET` | `/analytics/sales` | Yes | Get sales analytics with optional date range (`?startDate=&endDate=`) |
+| `GET` | `/analytics/top-products` | Yes | Get top-selling products (`?limit=10`) |
+| `GET` | `/analytics/category-sales` | Yes | Get sales breakdown by category |
+| `GET` | `/analytics/user-stats` | Yes | Get current user's order statistics |
+| `GET` | `/analytics/user-stats/:userId` | Yes | Get specific user's order statistics |
+| `GET` | `/analytics/order-status` | Yes | Get order status distribution counts |
+| `GET` | `/analytics/monthly-trend` | Yes | Get monthly sales trend (`?year=2026`) |
+
 ---
 
 ## Authentication Flow
@@ -356,9 +443,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIs...
 
 1. `auth.rest` - Register and login first to get a token
 2. `categories.rest` - Create categories (needed for products)
-3. `products.rest` - Create products (needed for orders)
+3. `products.rest` - Create products (needed for orders and reviews)
 4. `orders.rest` - Create and manage orders
-5. `users.rest` - Test user management
+5. `reviews.rest` - Test review system with `$lookup` and `$avg` operators
+6. `wishlist.rest` - Test wishlist with `$addToSet` and `$pull` operators
+7. `analytics.rest` - Test analytics with aggregation pipelines
+8. `users.rest` - Test user management
 
 ### Using curl
 

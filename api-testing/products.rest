@@ -3,7 +3,7 @@
 
 ### Variables
 @baseUrl = http://localhost:3000/api/v1/products
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTk0NWQ4NzRkYTk5ZWEwZDkyZDNhYmEiLCJ1c2VybmFtZSI6ImpvbmkiLCJpYXQiOjE3Nzc3MzUzMjEsImV4cCI6MTc3NzgyMTcyMX0.JBlpaVC1zdTElRPMNnljeI2S2TYHV3bdXUtUWwN2W1A
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2OTk0NWQ4NzRkYTk5ZWEwZDkyZDNhYmEiLCJ1c2VybmFtZSI6ImpvbmkiLCJpYXQiOjE3Nzc4MjE4MjQsImV4cCI6MTc3NzkwODIyNH0.2KNFjzWOhWQyJJ2vI_inN5wkvnIS0TEc6O_Yo_v7Qgw
 @categoryId = 69f61a26beebf764f2b1a014
 
 ###
