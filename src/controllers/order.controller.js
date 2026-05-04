@@ -2,14 +2,11 @@ import * as orderService from "#services/order.service.js";
 import { asyncHandler } from "#middlewares/asyncHandler.middleware.js";
 
 export const createOrder = asyncHandler(async (req, res) => {
-    const orderData = {
-        ...req.body,
-        userId: req.user.userId,
-    };
-    const result = await orderService.createOrder(orderData);
+    const result = await orderService.createOrder(req.user.userId, req.body);
     res.status(201).json({
         message: "Order created successfully",
-        order: result,
+        status: "ok",
+        data: result,
     });
 });
 

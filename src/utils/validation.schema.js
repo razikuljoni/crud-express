@@ -1,9 +1,14 @@
+import { USER_ROLES, USER_TYPES } from "#constants/user.const.js";
 import { z } from "zod";
 
 export const registerSchema = z.object({
-    name: z.string().min(1, "Name is required"),
+    name: z.string().min(3, "Name is required"),
     username: z.string().min(3, "Username must be at least 3 characters"),
+    email: z.email("Invalid email format").optional(),
+    role: z.enum(USER_ROLES, { error: "Invalid role" }).default(USER_TYPES.BUYER),
     password: z.string().min(6, "Password must be at least 6 characters"),
+    balance: z.number().default(0).optional(),
+    avatar: z.url().optional().nullable(),
 });
 
 export const loginSchema = z.object({
@@ -12,21 +17,27 @@ export const loginSchema = z.object({
 });
 
 export const createUserSchema = z.object({
-    name: z.string().min(1, "Name is required"),
+    name: z.string().min(3, "Name is required"),
     username: z.string().min(3, "Username must be at least 3 characters"),
-    email: z.string().email("Invalid email format"),
+    email: z.email("Invalid email format").optional(),
+    role: z.enum(USER_ROLES, { error: "Invalid role" }),
     password: z.string().min(6, "Password must be at least 6 characters"),
+    balance: z.number().default(0).optional(),
+    avatar: z.url().optional().nullable(),
 });
 
 export const updateUserSchema = z.object({
-    name: z.string().min(1).optional(),
+    name: z.string().min(3).optional(),
     username: z.string().min(3).optional(),
-    email: z.string().email().optional(),
+    email: z.email().optional(),
     password: z.string().min(6).optional(),
+    balance: z.number().default(0).optional(),
+    avatar: z.url().optional().nullable(),
+    role: z.enum(USER_ROLES).optional(),
 });
 
 export const createCategorySchema = z.object({
-    name: z.string().min(1, "Category name is required"),
+    name: z.string().min(3, "Category name is required"),
     description: z.string().optional(),
 });
 
@@ -41,6 +52,7 @@ export const createProductSchema = z.object({
     price: z.number().positive("Price must be positive"),
     stock: z.number().int().nonnegative("Stock must be non-negative"),
     categoryId: z.string().min(1, "Category ID is required"),
+    images: z.array(z.url()).optional().nullable(),
 });
 
 export const updateProductSchema = z.object({
@@ -49,6 +61,7 @@ export const updateProductSchema = z.object({
     price: z.number().positive().optional(),
     stock: z.number().int().nonnegative().optional(),
     categoryId: z.string().min(1).optional(),
+    images: z.array(z.url()).optional().nullable(),
 });
 
 export const createOrderSchema = z.object({
@@ -57,11 +70,9 @@ export const createOrderSchema = z.object({
             z.object({
                 productId: z.string().min(1, "Product ID is required"),
                 quantity: z.number().int().positive("Quantity must be positive"),
-                price: z.number().positive("Price must be positive"),
             }),
         )
         .min(1, "At least one item is required"),
-    totalAmount: z.number().positive("Total amount must be positive"),
     shippingAddress: z.object({
         street: z.string().min(1, "Street is required"),
         city: z.string().min(1, "City is required"),

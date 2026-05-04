@@ -1,6 +1,5 @@
 // User model - Database operations only
 import { getDb } from "#config/db.js";
-import logger from "#utils/logger.js";
 import { ObjectId } from "mongodb";
 
 const COLLECTION_NAME = "users";
@@ -21,8 +20,7 @@ export const getAllUsers = async (page = 1, limit = 10) => {
 
 export const findUserByUsername = async (username) => {
     const db = await getDb();
-    const result = await db.collection(COLLECTION_NAME).findOne({ username });
-    return result;
+    return await db.collection(COLLECTION_NAME).findOne({ username });
 };
 
 export const findUserById = async (userId) => {
@@ -54,5 +52,5 @@ export const isUserExists = async (username, email) => {
     const existingUser = await db.collection(COLLECTION_NAME).findOne({
         $or: [{ username }, { email }],
     });
-    return !!existingUser;
+    return existingUser;
 };

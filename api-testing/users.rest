@@ -9,7 +9,6 @@
 ### 1. Create a new user
 POST {{baseUrl}}/create
 Content-Type: application/json
-Authorization: Bearer {{token}}
 
 {
     "name": "Alice Smith",

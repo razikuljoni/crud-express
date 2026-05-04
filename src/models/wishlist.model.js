@@ -22,6 +22,7 @@ export const addProductToWishlist = async (userId, productId) => {
             { userId: new ObjectId(userId) },
             {
                 $addToSet: { products: new ObjectId(productId) },
+                $set: { updatedAt: new Date() },
                 $setOnInsert: { createdAt: new Date(), userId: new ObjectId(userId) },
             },
             { upsert: true }
@@ -35,7 +36,10 @@ export const removeProductFromWishlist = async (userId, productId) => {
         .collection(COLLECTION_NAME)
         .updateOne(
             { userId: new ObjectId(userId) },
-            { $pull: { products: new ObjectId(productId) } }
+            { 
+                $pull: { products: new ObjectId(productId) },
+                $set: { updatedAt: new Date() }
+            }
         );
     return result;
 };

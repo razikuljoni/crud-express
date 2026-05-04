@@ -44,7 +44,7 @@ export const deleteOrder = async (orderId) => {
 export const findOrdersByUserId = async (userId, page = 1, limit = 10) => {
     const db = await getDb();
     const skip = (page - 1) * limit;
-    const filter = { userId: new ObjectId(userId) };
+    const filter = { userId: userId };
     const total = await db.collection(COLLECTION_NAME).countDocuments(filter);
     const orders = await db
         .collection(COLLECTION_NAME)

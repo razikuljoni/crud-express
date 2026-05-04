@@ -16,7 +16,8 @@
         "#services/*": "./src/services/*",
         "#controllers/*": "./src/controllers/*",
         "#middlewares/*": "./src/middlewares/*",
-        "#config/*": "./src/config/*"
+        "#config/*": "./src/config/*",
+        "#constants/*": "./src/constants/*"
     },
     "keywords": [],
     "author": "MD Razikul Islam Joni",

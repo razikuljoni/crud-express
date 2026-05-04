@@ -35,8 +35,13 @@ export const getTopProducts = async (limit = 10) => {
             { $match: { status: { $ne: "cancelled" } } },
             { $unwind: "$items" },
             {
+                $addFields: {
+                    "items.productIdObj": { $toObjectId: "$items.productId" },
+                },
+            },
+            {
                 $group: {
-                    _id: "$items.productId",
+                    _id: "$items.productIdObj",
                     totalSold: { $sum: "$items.quantity" },
                     revenue: { $sum: { $multiply: ["$items.price", "$items.quantity"] } },
                 },
@@ -74,18 +79,28 @@ export const getCategorySales = async () => {
             { $match: { status: { $ne: "cancelled" } } },
             { $unwind: "$items" },
             {
+                $addFields: {
+                    "items.productIdObj": { $toObjectId: "$items.productId" },
+                },
+            },
+            {
                 $lookup: {
                     from: "products",
-                    localField: "items.productId",
+                    localField: "items.productIdObj",
                     foreignField: "_id",
                     as: "product",
                 },
             },
             { $unwind: "$product" },
             {
+                $addFields: {
+                    "product.categoryIdObj": { $toObjectId: "$product.categoryId" },
+                },
+            },
+            {
                 $lookup: {
                     from: "categories",
-                    localField: "product.categoryId",
+                    localField: "product.categoryIdObj",
                     foreignField: "_id",
                     as: "category",
                 },
@@ -110,7 +125,7 @@ export const getUserOrderStats = async (userId) => {
     const result = await db
         .collection("orders")
         .aggregate([
-            { $match: { userId: new ObjectId(userId) } },
+            { $match: { userId: userId } },
             {
                 $group: {
                     _id: "$userId",

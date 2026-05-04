@@ -5,7 +5,8 @@ export const createProduct = asyncHandler(async (req, res) => {
     const result = await productService.createProduct(req.body);
     res.status(201).json({
         message: "Product created successfully",
-        product: result,
+        status: "ok",
+        data: result,
     });
 });
 

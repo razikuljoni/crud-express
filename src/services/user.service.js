@@ -16,6 +16,8 @@ export const createUser = async (userData) => {
     const userToCreate = {
         ...userData,
         password: hashedPassword,
+        balance: userData.balance || 0,
+        role: userData.role || "buyer",
     };
 
     return await userModel.createUser(userToCreate);

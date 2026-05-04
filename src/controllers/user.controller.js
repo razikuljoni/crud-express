@@ -5,7 +5,8 @@ export const createUser = asyncHandler(async (req, res) => {
     const result = await userService.createUser(req.body);
     res.status(201).json({
         message: "User created successfully",
-        user: result,
+        status: "ok",
+        data: result,
     });
 });
 

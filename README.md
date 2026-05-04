@@ -130,11 +130,12 @@ Request → Routes → Middleware → Controller → Service → Model → Datab
 2. **Middleware** - Cross-cutting concerns (auth, validation, error wrapping)
 3. **Controllers** - Handle HTTP request/response, format JSON responses
 4. **Services** - Business logic, data transformation, orchestration
-5. **Models** - Direct database operations (CRUD queries)
+5. **Models** - Direct database operations (CRUD queries + aggregation pipelines)
 6. **Utils** - Shared utilities (logger, JWT, password hashing, validation schemas)
+
 ### Co-Relational Modules (Advanced)
 
-The application includes advanced modules demonstrating MongoDB co-relational patterns:
+The application includes advanced modules demonstrating MongoDB co-relational patterns with proper type handling:
 
 #### Reviews Module
 - **Purpose**: Product rating and review system
@@ -146,21 +147,32 @@ The application includes advanced modules demonstrating MongoDB co-relational pa
 
 #### Wishlist Module
 - **Purpose**: Many-to-many relationship between users and products
-- **MongoDB Operators**: `$addToSet` (add unique items), `$pull` (remove items), `$lookup` (populate products with categories), `$in` (check membership)
+- **MongoDB Operators**: `$addToSet` (add unique items), `$pull` (remove items), `$lookup` (populate products with categories), `$in` (check membership), `$set` (update timestamps)
 - **Key Features**:
   - Uses `$addToSet` to prevent duplicate products in wishlist
-  - Array-based design for efficient product storage
+  - Maintains `updatedAt` timestamp on all modifications
   - Populated queries with category details
 
 #### Analytics Module
 - **Purpose**: Business intelligence and reporting
-- **MongoDB Operators**: `$unwind`, `$multiply`, `$sum`, `$group`, `$sort`, `$limit`, `$lookup`, `$month`, `$match` with date ranges
+- **MongoDB Operators**: `$unwind`, `$multiply`, `$sum`, `$group`, `$sort`, `$limit`, `$lookup`, `$month`, `$match` with date ranges, `$toObjectId` (type conversion)
 - **Key Features**:
   - Sales analytics with date range filtering
-  - Top products by quantity sold and revenue
-  - Category-wise sales breakdown
+  - Top products by quantity sold and revenue (with proper ObjectId conversion)
+  - Category-wise sales breakdown (multi-collection joins)
   - Monthly sales trends using `$month` operator
   - Dashboard combining multiple aggregations
+
+### Production Fixes Applied:
+- Fixed auth service password comparison bug (`passwordHash` → `password`)
+- Fixed validation schema enum parameter format
+- Protected user creation route with authentication
+- Standardized response format across all controllers (`{ message, status: "ok", data }`)
+- Added product existence validation in order creation service
+- Added stock validation before order creation
+- Fixed ObjectId vs String type consistency (orders store userId as string, analytics use `$toObjectId`)
+- Maintained `updatedAt` field in wishlist operations
+- Added category existence validation in product service
 
 
 ### Request Flow
@@ -188,6 +200,25 @@ Response back through layers
     ↓
 Global Error Handler (if error occurs)
 ```
+
+---
+
+### Production Readiness Fixes Applied
+
+The following critical issues have been fixed for production:
+
+1. **Fixed auth service** - Corrected `passwordHash` to `password` in `comparePassword` call
+2. **Fixed validation schemas** - Corrected Zod enum parameter format
+3. **Secured user creation** - Added `authenticate` middleware to `POST /users/create`
+4. **Standardized response format** - All controllers now return `{ message, status: "ok", data }`
+5. **Dynamic order creation** - Orders now fetch real product price, name, and auto-calculate total
+6. **Stock management** - Product stock automatically decreases on order, validates availability
+7. **Fixed type consistency** - Orders store `userId` as string (from JWT), analytics use `$toObjectId` for lookups
+8. **Fixed analytics aggregations** - Added `$toObjectId` stages to handle string-to-ObjectId conversion in `$lookup` operations
+9. **Maintained wishlist timestamps** - `updatedAt` now set on all wishlist modifications
+10. **Added product service validation** - Category existence checked on product create/update
+11. **Enhanced user model** - Added role support (buyer/seller/admin) with proper defaults
+12. **Fixed order controller** - Properly passes `userId` to service layer
 
 ---
 
@@ -283,12 +314,14 @@ Base URL: `http://localhost:3000/api/v1`
 
 ### Users (`/api/v1/users`)
 
+**User Roles**: `buyer` (default), `seller`, `admin`
+
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
-| `POST` | `/users/create` | Yes | Create a new user |
+| `POST` | `/users/create` | Yes | Create a new user (with optional role) |
 | `GET` | `/users/` | Yes | List all users (paginated) |
 | `GET` | `/users/:id` | Yes | Get user by ID |
-| `PATCH` | `/users/:id` | Yes | Update user |
+| `PATCH` | `/users/:id` | Yes | Update user (incl. role change) |
 | `DELETE` | `/users/:id` | Yes | Delete user |
 
 ### Categories (`/api/v1/categories`)
@@ -313,9 +346,15 @@ Base URL: `http://localhost:3000/api/v1`
 
 ### Orders (`/api/v1/orders`)
 
+**Dynamic Order Creation**: When creating an order, only provide `productId` and `quantity`. The system automatically:
+- Fetches real product price, name from database
+- Calculates item total and order total
+- Validates stock availability
+- Decreases product stock automatically
+
 | Method | Endpoint | Auth | Description |
 |--------|----------|------|-------------|
-| `POST` | `/orders/` | Yes | Create an order |
+| `POST` | `/orders/` | Yes | Create an order (dynamic - auto-fetches product details) |
 | `GET` | `/orders/` | Yes | List all orders (filterable) |
 | `GET` | `/orders/my` | Yes | Get current user's orders |
 | `GET` | `/orders/:id` | Yes | Get order by ID |
@@ -367,7 +406,7 @@ Base URL: `http://localhost:3000/api/v1`
 
 ## Authentication Flow
 
-### 1. Register
+### 1. Register (with optional role)
 
 ```bash
 POST /api/v1/auth/register
@@ -376,7 +415,8 @@ Content-Type: application/json
 {
     "name": "John Doe",
     "username": "johndoe",
-    "password": "password123"
+    "password": "password123",
+    "role": "buyer"  # Optional: buyer (default), seller, or admin
 }
 ```
 
@@ -384,10 +424,12 @@ Content-Type: application/json
 ```json
 {
     "message": "User registered successfully",
-    "user": {
+    "status": "ok",
+    "data": {
         "userId": "6789abcd...",
         "username": "johndoe",
-        "name": "John Doe"
+        "name": "John Doe",
+        "role": "buyer"
     }
 }
 ```
@@ -408,10 +450,14 @@ Content-Type: application/json
 ```json
 {
     "message": "Login successful",
-    "token": "eyJhbGciOiJIUzI1NiIs...",
-    "user": {
-        "id": "6789abcd...",
-        "username": "johndoe"
+    "status": "ok",
+    "data": {
+        "token": "eyJhbGci...",
+        "user": {
+            "id": "6789abcd...",
+            "username": "johndoe",
+            "role": "buyer"
+        }
     }
 }
 ```

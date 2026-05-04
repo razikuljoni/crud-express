@@ -3,7 +3,7 @@ import * as authService from "#services/auth.service.js";
 import { verifyToken } from "#utils/jwt.util.js";
 
 export const register = asyncHandler(async (req, res) => {
-    const { name, username, password } = req.body;
+    const { name, username, password, role } = req.body;
 
     const missingFields = [];
     if (!name) missingFields.push("name");
@@ -20,11 +20,12 @@ export const register = asyncHandler(async (req, res) => {
         return res.status(400).json({ error: "Password must be at least 6 characters" });
     }
 
-    const result = await authService.registerUser(name, username, password);
+    const result = await authService.registerUser(name, username, password, role);
 
     res.status(201).json({
         message: "User registered successfully",
-        user: result,
+        status: "ok",
+        data: result,
     });
 });
 
@@ -39,8 +40,11 @@ export const login = asyncHandler(async (req, res) => {
 
     res.json({
         message: "Login successful",
-        token: result.token,
-        user: result.user,
+        status: "ok",
+        data: {
+            token: result.token,
+            user: result.user,
+        },
     });
 });
 
@@ -55,6 +59,7 @@ export const whoAmI = asyncHandler(async (req, res) => {
 
     res.json({
         message: "Authenticated user",
-        user: { id: decoded.userId, username: decoded.username },
+        status: "ok",
+        data: { id: decoded.userId, username: decoded.username, role: decoded.role },
     });
 });

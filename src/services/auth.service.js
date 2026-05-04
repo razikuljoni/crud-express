@@ -2,7 +2,7 @@ import { generateToken } from "#utils/jwt.util.js";
 import { comparePassword, hashPassword } from "#utils/password.util.js";
 import * as userModel from "#models/user.model.js";
 
-export const registerUser = async (name, username, password) => {
+export const registerUser = async (name, username, password, role = "buyer") => {
     const existingUser = await userModel.findUserByUsername(username);
     if (existingUser) {
         throw new Error("Username already exists");
@@ -14,11 +14,13 @@ export const registerUser = async (name, username, password) => {
         name,
         username,
         password: hashedPassword,
+        role,
+        balance: 0,
         createdAt: new Date(),
     };
 
     const result = await userModel.createUser(userData);
-    return { userId: result.insertedId, username, name };
+    return { userId: result.insertedId, username, name, role };
 };
 
 export const loginUser = async (username, password) => {
@@ -27,12 +29,12 @@ export const loginUser = async (username, password) => {
         throw new Error("User Does Not Exist!");
     }
 
-    const isMatch = await comparePassword(password, user.passwordHash);
+    const isMatch = await comparePassword(password, user.password);
     if (!isMatch) {
         throw new Error("Invalid credentials");
     }
 
-    const token = generateToken({ userId: user._id.toString(), username: user.username });
+    const token = generateToken({ userId: user._id.toString(), username: user.username, role: user.role });
 
-    return { token, user: { id: user._id, username: user.username } };
+    return { token, user: { id: user._id, username: user.username, role: user.role } };
 };
